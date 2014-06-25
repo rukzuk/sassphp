@@ -35,5 +35,6 @@ PHP_METHOD(Sass, getIncludePath);
 PHP_METHOD(Sass, setIncludePath);
 PHP_METHOD(Sass, getImagePath);
 PHP_METHOD(Sass, setImagePath);
+PHP_METHOD(Sass, setStyle);
 
 #endif

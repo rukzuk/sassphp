@@ -266,6 +266,22 @@ PHP_METHOD(Sass, setImagePath)
     RETURN_NULL();
 }
 
+PHP_METHOD(Sass, setStyle)
+{
+    zval *this = getThis();
+
+    int style;
+    int path_len;
+
+    if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "l", &path, &path_len) == FAILURE)
+        RETURN_FALSE;
+
+    sass_object *obj = (sass_object *)zend_object_store_get_object(this TSRMLS_CC);
+    obj->style = style;
+
+    RETURN_NULL();
+}
+
 
 /* --------------------------------------------------------------
  * EXCEPTION HANDLING
@@ -288,6 +304,7 @@ zend_function_entry sass_methods[] = {
     PHP_ME(Sass,  setIncludePath,  NULL,  ZEND_ACC_PUBLIC)
     PHP_ME(Sass,  getImagePath,    NULL,  ZEND_ACC_PUBLIC)
     PHP_ME(Sass,  setImagePath,    NULL,  ZEND_ACC_PUBLIC)
+    PHP_ME(Sass,  setStyle,        NULL,  ZEND_ACC_PUBLIC)
     {NULL, NULL, NULL}
 };
 
