@@ -271,9 +271,9 @@ PHP_METHOD(Sass, setStyle)
     zval *this = getThis();
 
     int style;
-    int path_len;
+    int style_len;
 
-    if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "l", &path, &path_len) == FAILURE)
+    if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "l", &style, &style_len) == FAILURE)
         RETURN_FALSE;
 
     sass_object *obj = (sass_object *)zend_object_store_get_object(this TSRMLS_CC);
