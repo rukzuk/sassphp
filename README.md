@@ -20,6 +20,12 @@ Remember to grab your submodules:
 
 	$ git submodule init
 	$ git submodule update
+	
+And the same for the sub submodules!
+
+	$ cd lib/libsass
+	$ git submodule init
+	$ git submodule update
 
 ...and compile it! I've written a little PHP script to do all the stuff you need to do:
 
@@ -54,6 +60,10 @@ You can set the include path for the library to use:
     $sass = new Sass();
     $sass->setIncludePath('/tmp');
     $css = $sass->compile($source);
+    
+You can set the compress style before compiling it (Default is STYLE_NESTED):
+
+    $sass->setStyle(Sass::STYLE_COMPRESSED);
 
 If there's a problem, the extension will throw a `SassException`:
 
@@ -71,6 +81,9 @@ If there's a problem, the extension will throw a `SassException`:
     }
 
 ## Changelog
+
+** Version 0.3.0**
+* Allow setting compress style
 
 ** Version 0.2.0**
 * Changed methods to be non-static
