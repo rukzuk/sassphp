@@ -91,3 +91,4 @@ If there's a problem, the extension will throw a `SassException`:
 
 **Version 0.1.0 - IN DEVELOPMENT**
 * Initial release
+
